@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>meridian — mission-day desk</title>
+  <meta name="description" content="A mission-day desk for an analog commander. Sleep, conflict, comms delay, and the one decision due before the next contact. Synthetic habitat. No chatbot. No diagnosis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the desk</a>
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="mark" href="#day">meridian</a>
+      <nav class="rooms" aria-label="Desk rooms">
+        <button type="button" data-room="day" class="on">Day</button>
+        <button type="button" data-room="crew">Crew</button>
+        <button type="button" data-room="log">Log</button>
+      </nav>
+      <p class="bar-meta">Synthetic habitat · commander view</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="mast">
+      <div>
+        <p class="label">Site Meridian · winter-over analog</p>
+        <h1>Sol <span id="sol-num">42</span></h1>
+        <p class="lede" id="lede">Before the next contact. One decision, cited from the log.</p>
+      </div>
+      <div class="sol-switch" role="group" aria-label="Mission day">
+        <button type="button" id="prev" aria-label="Previous sol">←</button>
+        <span id="sol-range">42 / 60</span>
+        <button type="button" id="next" aria-label="Next sol">→</button>
+      </div>
+    </section>
+
+    <section id="room-day" class="room on">
+      <div class="grid">
+        <article class="decision" id="decision"></article>
+        <aside class="stack" id="signals"></aside>
+      </div>
+      <section class="map" id="map" aria-label="Known and open"></section>
+    </section>
+
+    <section id="room-crew" class="room" hidden></section>
+    <section id="room-log" class="room" hidden></section>
+  </main>
+
+  <footer>
+    <p>Not a medical device. Not crew selection. Sleep is reported hours, not a score. Conflict items are operational tensions the commander wrote, not findings. Fictional crew, fictional habitat.</p>
+    <p class="foot-meta">meridian · a mission-day desk · <a href="https://github.com/nou-hue/meridian">nou-hue/meridian</a></p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
